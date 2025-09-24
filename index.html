@@ -170,41 +170,59 @@
     <!-- Project Slider -->
     <div class="swiper project-swiper">
         <div class="swiper-wrapper">
+
             <div class="swiper-slide">
-                <img src="img/project/project1.jpg" alt="Project 1">
+                <img src="./img/project4.jpg" alt="Project 4">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Luxury and simplicity</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="./img/project1.jpg" alt="Project 1">
                 <div class="project-info">
                     <h4>Interior</h4>
                     <p>Modern design with elegance</p>
                 </div>
             </div>
             <div class="swiper-slide">
-                <img src="img/project/project2.jpg" alt="Project 2">
+                <img src="./img/project2.jpg" alt="Project 2">
                 <div class="project-info">
                     <h4>Interior</h4>
                     <p>Creative and functional</p>
                 </div>
             </div>
             <div class="swiper-slide">
-                <img src="img/project/project3.jpg" alt="Project 3">
+                <img src="./img/project3.jpg" alt="Project 3">
                 <div class="project-info">
                     <h4>Interior</h4>
                     <p>Comfort meets style</p>
                 </div>
             </div>
             <div class="swiper-slide">
-                <img src="img/project/project4.jpg" alt="Project 4">
+                <img src="./img/project4.jpg" alt="Project 4">
                 <div class="project-info">
                     <h4>Interior</h4>
                     <p>Luxury and simplicity</p>
                 </div>
             </div>
             <div class="swiper-slide">
-                <img src="img/project/project5.jpg" alt="Project 5">
+                <img src="./img/project5.jpg" alt="Project 5">
                 <div class="project-info">
                     <h4>Interior</h4>
                     <p>Elegant spaces</p>
                 </div>
             </div>
+
+            <div class="swiper-slide">
+                <img src="./img/project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Comfort meets style</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Pagination & Navigation -->
@@ -218,7 +236,7 @@
     <script>
         const swiper = new Swiper('.project-swiper', {
             loop: true,
-            autoplay: { delay: 3000, disableOnInteraction: false },
+            autoplay: { delay: 2500, disableOnInteraction: false },
             navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
             pagination: { el: '.swiper-pagination', clickable: true },
             slidesPerView: 3,
@@ -245,7 +263,7 @@
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         .project-swiper .swiper-slide img {
