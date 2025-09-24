@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/slick.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -163,64 +167,157 @@
     </section>
     <!-- About Section End -->
 
-    <!-- Project Section Begin -->
-    <section class="project">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <span>Our works</span>
-                        <h2>Latest projects</h2>
-                    </div>
+    <!-- Project Slider -->
+    <div class="swiper project-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/project/project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Modern design with elegance</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="project__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project.jpg">
-                            <div class="project__slider__item__hover">
-                                <span>interiors</span>
-                                <!-- <h5>Lower River Street Astoria</h5> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project1.jpg">
-                            <div class="project__slider__item__hover">
-                                <span>interiors</span>
-                                <!-- <h5>Lower River Street Astoria</h5> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project2.jpg">
-                            <div class="project__slider__item__hover">
-                                <span>interiors</span>
-                                <!-- <h5>Lower River Street Astoria</h5> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project3.jpg">
-                            <div class="project__slider__item__hover">
-                                <span>interiors</span>
-                                <!-- <h5>Lower River Street Astoria</h5> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project4.jpg">
-                            <div class="project__slider__item__hover">
-                                <span>interiors</span>
-                                <!-- <h5>Lower River Street Astoria</h5> -->
-                            </div>
-                        </div>
-                    </div>
+            <div class="swiper-slide">
+                <img src="img/project/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Creative and functional</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/project/project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Comfort meets style</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/project/project4.jpg" alt="Project 4">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Luxury and simplicity</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/project/project5.jpg" alt="Project 5">
+                <div class="project-info">
+                    <h4>Interior</h4>
+                    <p>Elegant spaces</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Project Section End -->
+
+        <!-- Pagination & Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.project-swiper', {
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            slidesPerView: 3,
+            spaceBetween: 20,
+            effect: 'slide',
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                600: { slidesPerView: 2 },
+                1000: { slidesPerView: 3 }
+            }
+        });
+    </script>
+
+    <!-- Styling -->
+    <style>
+        .project-swiper {
+            width: 100%;
+            padding: 40px 0;
+        }
+
+        .project-swiper .swiper-slide {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project-swiper .swiper-slide img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .project-swiper .swiper-slide:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(0, 0, 0, 0.3);
+            color: #dfa667;
+            padding: 12px 20px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .project-info h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #dfa667;
+            font-weight: 800;
+        }
+
+        .project-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .project-swiper .swiper-slide:hover .project-info {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            color: #ff6600;
+        }
+
+        .swiper-pagination-bullet {
+            background: #000;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #ff6600;
+            opacity: 1;
+        }
+    </style>
+
 
     <!-- Services Section Begin -->
     <section class="services spad">

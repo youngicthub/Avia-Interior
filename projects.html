@@ -93,53 +93,108 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Project Page Section Begin -->
+    <!-- Project Page Slider Section -->
     <section class="project-page spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/project-p1.jpg" alt="">
+            <div class="swiper project-slider-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/project-p1.jpg" alt="Office Building">
                         <h4><a href="#">Office Building</a></h4>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/projects1.jpg" alt="">
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/projects1.jpg" alt="Interior Design">
                         <h4><a href="#">Interior Design</a></h4>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/projects.jpg" alt="">
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/projects.jpg" alt="Interior Design">
                         <h4><a href="#">Interior Design</a></h4>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/projects2.jpg" alt="">
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/projects2.jpg" alt="Home Building">
                         <h4><a href="#">Home Building</a></h4>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/project5.jpg" alt="">
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/project5.jpg" alt="Decoration">
                         <h4><a href="#">Decoration</a></h4>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="project__item">
-                        <img src="img/project/project6.jpg" alt="">
+                    <div class="swiper-slide project__item">
+                        <img src="img/project/project6.jpg" alt="Decoration">
                         <h4><a href="#">Decoration</a></h4>
                     </div>
+
                 </div>
-                <div class="col-lg-12 text-center">
-                    <a href="#" class="primary-btn normal-btn">Load More</a>
-                </div>
+
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="primary-btn normal-btn">Load More</a>
             </div>
         </div>
     </section>
-    <!-- Project Page Section End -->
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        const projectSwiper = new Swiper('.project-slider-swiper', {
+            loop: true,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            slidesPerView: 2,
+            spaceBetween: 20,
+            breakpoints: {
+                0: { slidesPerView: 1, spaceBetween: 10 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1200: { slidesPerView: 3, spaceBetween: 30 }
+            }
+        });
+    </script>
+
+    <!-- Scoped Styles for Project Slider Only -->
+    <style>
+        .project-slider-swiper .project__item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .project-slider-swiper .project__item img:hover {
+            transform: scale(1.05);
+            filter: brightness(0.85);
+        }
+
+        .project-slider-swiper .swiper-slide h4 {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .project-slider-swiper .swiper-button-next,
+        .project-slider-swiper .swiper-button-prev {
+            color: #000;
+        }
+
+        .project-slider-swiper .swiper-pagination-bullet {
+            background: #000;
+            opacity: 0.5;
+        }
+
+        .project-slider-swiper .swiper-pagination-bullet-active {
+            background: #ff6600;
+            opacity: 1;
+        }
+    </style>
+
 
     <!-- Footer Section Begin -->
     <footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
